@@ -1,0 +1,40 @@
+<?php
+$title = 'Edit school';
+$this->headTitle($title);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('school', array('action' => 'edit', 'id' => $this->id,)));
+$form->prepare();
+ 
+$errors = $this->formElementErrors();
+$errors->setMessageOpenFormat('<div class="alert alert-danger"><ul%s><li>');
+$errors->setMessageCloseString('</li></ul></div>');
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+echo $this->form()->openTag($form), 
+$this->formHidden($form->get('id'));
+?>
+<div class="form-group">
+    <label for="<?php echo $form->get('code')->getName(); ?>"><?php echo $form->get('code')->getLabel(); ?></label>
+    <input name="<?php echo $form->get('code')->getName(); ?>" type="text" class="form-control" value="<?php echo $form->get('code')->getValue(); ?>">
+    <?php echo $errors($form->get('code')); ?>    
+</div>
+<div class="form-group">
+    <label for="<?php echo $form->get('name')->getName(); ?>"><?php echo $form->get('name')->getLabel(); ?></label>
+    <input name="<?php echo $form->get('name')->getName(); ?>" type="text" class="form-control" value="<?php echo $form->get('name')->getValue(); ?>">
+    <?php echo $errors($form->get('name')); ?>
+</div>
+<div class="form-group">
+    <label for="<?php echo $form->get('address')->getName(); ?>"><?php echo $form->get('address')->getLabel(); ?></label>
+    <input name="<?php echo $form->get('address')->getName(); ?>" type="text" class="form-control" value="<?php echo $form->get('address')->getValue(); ?>">
+    <?php echo $errors($form->get('address')); ?>
+</div>
+<button type="submit" class="btn btn-default">Save</button>
+
+<?php echo $this->form()->closeTag(); ?>
+
+<br>
+
+<a class="btn btn-link" href="<?php echo $this->url('school');?>">&laquo; Return</a>
