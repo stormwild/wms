@@ -102,6 +102,10 @@ class School implements InputFilterAwareInterface
                         'options' => array(
                             'table' => 'school',
                             'field' => 'code',
+                            'exclude' => array(
+                                 'field' => 'id',
+                                 'value' => $id
+                            ),
                             'adapter' => $this->getDbAdapter(),
                             'messages' => array(
                                 'recordFound' => 'Code already exists.'
@@ -145,6 +149,10 @@ class School implements InputFilterAwareInterface
                         'options' => array(
                             'table' => 'school',
                             'field' => 'name',
+                            'exclude' => array(
+                                 'field' => 'id',
+                                 'value' => $id
+                            ),
                             'adapter' => $this->getDbAdapter(),
                             'messages' => array(
                                 'recordFound' => 'Name already exists.'
