@@ -1,0 +1,30 @@
+body {
+	padding: 0;
+}
+
+.container {
+	/* max-width: 100%; */
+}
+
+.header { 
+	/* background-color: #efabdb; */
+	border-bottom: 1px solid #efefef;
+	margin-bottom: 1em;
+}
+
+.body { 
+	/* background-color: #ababdb; */
+}
+
+.footer { 
+	/* background-color: #ccabdb; */
+	border-top: 1px solid #efefef;
+	margin-top: 1em;
+	padding-top: 1em;
+}
+
+.actions {
+	border-bottom: 1px solid #efefef;
+	margin-bottom: 2em;
+	padding-bottom: 1em;
+}
