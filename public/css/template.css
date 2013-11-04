@@ -28,3 +28,7 @@ body {
 	margin-bottom: 2em;
 	padding-bottom: 1em;
 }
+
+.pagination {
+	margin: 10px 0;
+}

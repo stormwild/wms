@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Grolier</title>
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="css/template.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+		
+		<!--[if lt IE 9]><script type="text/javascript" src="js/html5shiv.js"></script><![endif]-->
+		<!--[if lt IE 9]><script type="text/javascript" src="js/respond.min.js"></script><![endif]-->
+		
+	</head>
+	
+	<body>
+	
+		<header class="container header">
+			<div class="row">
+				<h1 class="col-md-12">Grolier</h1>
+			</div>
+		</header>
+		
+		<div class="container body">
+			<div class="row">
+				<nav class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+					  <li class="active"><a href="#">Home</a></li>
+					  <li><a href="#">Menu Item 1</a></li>
+					  <li><a href="#">Menu Item 2</a></li>
+					</ul>
+				</nav>
+				<div class="col-md-10">
+					<nav class="row">
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li><a href="#">BookFair</a></li>
+						  <li class="active">Issuance</li>
+						</ol>
+					</nav>
+					<div class="row actions">
+						<div class="btn-toolbar nav navbar-nav navbar-right" role="toolbar">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default btn-sm">Save</button>
+							  	<button type="button" class="btn btn-default btn-sm">Return</button>
+							  	<button type="button" class="btn btn-default btn-sm">Print</button>
+							  	<button type="button" class="btn btn-default btn-sm">Help</button>
+						  	</div>
+						</div>					
+					</div>
+					<div class="row">
+						<form role="form" class="form-horizontal">
+							<div class="col-md-6">
+							  	<div class="form-group">
+							  		<label for="tran_no" class="col-sm-4 control-label">Tran No.</label>
+								    <div class="col-sm-8">
+								      <input type="text" name="tran_no" class="form-control" id="tran_no" placeholder="Transaction No.">
+								    </div>
+							    </div>
+							    <div class="form-group">
+							  		<label for="bookfair_no" class="col-sm-4 control-label">BookFair No.</label>
+								    <div class="col-sm-8">
+								      <input type="text" name="bookfair_no" class="form-control" id="bookfair_no" placeholder="BookFair No.">
+								    </div>
+							    </div>
+							    <div class="form-group">
+							  		<label for="code" class="col-sm-4 control-label">Code</label>
+								    <div class="col-sm-8">
+								      <input type="text" name="code" class="form-control" id="code" placeholder="Code">
+								    </div>
+							    </div>
+							</div>
+							<div class="col-md-6">
+							  	<div class="form-group">
+							  		<label for="name" class="col-sm-4 control-label">Name</label>
+								    <div class="col-sm-8">
+								      <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+								    </div>
+							    </div>
+							    <div class="form-group">
+							  		<label for="address" class="col-sm-4 control-label">Address</label>
+								    <div class="col-sm-8">
+								      <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+								    </div>
+							    </div>
+						    	<button type="button" class="btn btn-default btn-sm pull-right">Add</button>
+							</div>
+						</form>
+					</div>
+					<div class="row">
+						<div class="col-md-7">
+							<div class="row">
+								<div class="panel panel-default">																		
+								  	<div class="panel-heading">Book Fair Issuance</div>								
+									<table class="table">
+										<thead>
+											<tr>
+												<th>ISBN</th>
+												<th>Code</th>
+												<th>Description</th>
+												<th>Qty</th>
+												<th>Price</th>
+												<th>Ext Price</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>123456789123</td>
+												<td>AB123</td>
+												<td>Harry Potter</td>
+												<td>1</td>
+												<td>100.00</td>
+												<td>80.00</td>
+											</tr>
+											<tr>
+												<td>123456789123</td>
+												<td>CD123</td>
+												<td>Twighlight</td>
+												<td>5</td>
+												<td>100.00</td>
+												<td>80.00</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>								
+							</div>
+						</div>
+						<div class="col-md-4 col-md-offset-1">
+							<div class="row">
+								<div class="panel panel-default">									
+								  	<div class="panel-heading">Container</div>								
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Code</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>BC51123</td>
+											</tr>
+											<tr>
+												<td>BC45124</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>								
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		<footer class="container footer">
+			<div class="row">
+				<div class="col-md-12"><p><small>&copy; 2013 - 1996 by Scholastic Inc. All rights reserved.</small></p></div>
+			</div>
+		</footer>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</body>	
+</html>
