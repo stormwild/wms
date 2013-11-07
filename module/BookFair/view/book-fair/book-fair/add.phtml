@@ -1,0 +1,36 @@
+<?php
+$title = 'Add new Book Fair';
+$this->headTitle($title);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('bookfair', array('action' => 'add')));
+$form->prepare();
+
+$errors = $this->formElementErrors();
+$errors->setMessageOpenFormat('<div class="alert alert-danger"><ul%s><li>');
+$errors->setMessageCloseString('</li></ul></div>');
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+echo $this->form()->openTag($form), 
+$this->formHidden($form->get('id'));
+?>
+
+<div class="form-group">
+    <label for="<?php echo $form->get('status')->getName(); ?>"><?php echo $form->get('status')->getLabel(); ?></label>
+    <input name="<?php echo $form->get('status')->getName(); ?>" type="text" class="form-control" value="<?php echo $form->get('status')->getValue(); ?>">
+    <?php echo $errors($form->get('status')); ?>    
+</div>
+<div class="form-group">
+    
+    <?php echo $this->formSelect($form->get('school_id')); ?>
+</div>
+<button type="submit" class="btn btn-default">Save</button>
+
+<?php echo $this->form()->closeTag(); ?>
+
+<br>
+
+<a class="btn btn-link" href="<?php echo $this->url('school');?>">&laquo; Return</a>
+

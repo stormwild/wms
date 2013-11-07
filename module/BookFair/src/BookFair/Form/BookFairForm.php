@@ -27,8 +27,11 @@ class BookFairForm extends Form
         ));
         
         $this->add(array(
-            'name' => 'school',
+            'name' => 'school_id',
             'type' => 'Select',
+        	'attributes' => array(
+        		'class' => 'form-control'
+        	),
             'options' => array(
                 'label' => 'Select School',
                 'value_options' => $schools,
