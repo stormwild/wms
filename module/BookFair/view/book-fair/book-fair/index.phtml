@@ -1,1 +1,50 @@
-<p><?php echo 'BookFair/Index'; ?></p>
+<?php
+$title = 'BookFairs';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php 
+$flash = $this->flashMessenger();
+$flash->setMessageOpenFormat('<div%s>
+     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+         &times;
+     </button>
+     <ul><li>')
+     ->setMessageSeparatorString('</li><li>')
+     ->setMessageCloseString('</li></ul></div>');
+
+echo $flash->render('error',   array('alert', 'alert-dismissable', 'alert-danger'));
+echo $flash->render('info',    array('alert', 'alert-dismissable', 'alert-info'));
+echo $flash->render('default', array('alert', 'alert-dismissable', 'alert-warning'));
+echo $flash->render('success', array('alert', 'alert-dismissable', 'alert-success'));
+?>
+
+
+<p>
+    <a class="btn btn-primary btn-sm" href="<?php echo $this->url('bookfair', array('action'=>'add'));?>">Add new BookFair</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Id</th>
+    <th>Code</th>
+    <th>School Name</th>
+    <th>Status</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($bookfairs as $bookfair) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($bookfair->id);?></td>
+    <td><?php echo $this->escapeHtml($bookfair->school_code);?></td>
+    <td><?php echo $this->escapeHtml($bookfair->school_name);?></td>
+    <td><?php echo $this->escapeHtml($bookfair->status);?></td>    
+    <td>
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('bookfair',
+            array('action'=>'edit', 'id' => $bookfair->id));?>">Edit</a>
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('bookfair',
+            array('action'=>'delete', 'id' => $bookfair->id));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
