@@ -9,16 +9,15 @@ use BookFair\Model\BookFair;
 class BookFairFactory implements FactoryInterface
 {
 	/**
-     * Create db adapter service
+     * Create BookFair
      *
      * @param ServiceLocatorInterface $serviceLocator
-     * @return Adapter
+     * @return BookFair
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $dbAdapter = $serviceLocator->get('Zend\Db\Adapter\Adapter');
         return new BookFair($dbAdapter);
-    }
-	
+    }	
 	
 }
