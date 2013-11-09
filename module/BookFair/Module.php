@@ -5,6 +5,7 @@ use BookFair\Model\School;
 use BookFair\Model\SchoolTable;
 use BookFair\Model\BookFair;
 use BookFair\Model\BookFairTable;
+use BookFair\Factory\BookFairFactory;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\AbstractTableGateway;
@@ -45,10 +46,7 @@ class Module
                     $resultSetPrototype->setArrayObjectPrototype($sm->get('BookFair\Model\School'));
                     return new TableGateway('school', $dbAdapter, null, $resultSetPrototype);
                 },
-                'BookFair\Model\BookFair' => function($sm) {
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    return new BookFair($dbAdapter);
-                },
+                'BookFair\Model\BookFair' => 'BookFair\Factory\BookFairFactory',
                 'BookFair\Model\BookFairTable' => function($sm) {
                     $tableGateway = $sm->get('BookFairTableGateway');
                     return new BookFairTable($tableGateway);
