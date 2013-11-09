@@ -18,6 +18,5 @@ class BookFairFactory implements FactoryInterface
     {
         $dbAdapter = $serviceLocator->get('Zend\Db\Adapter\Adapter');
         return new BookFair($dbAdapter);
-    }	
-	
+    }    	
 }

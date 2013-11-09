@@ -32,20 +32,9 @@ class Module
     {
         return array(
             'factories' => array(
-                'BookFair\Model\School' => function($sm) {
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    return new School($dbAdapter);    
-                },
-                'BookFair\Model\SchoolTable' =>  function($sm) {
-                    $tableGateway = $sm->get('SchoolTableGateway');
-                    return new SchoolTable($tableGateway);
-                },
-                'SchoolTableGateway' => function ($sm) {
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    $resultSetPrototype = new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype($sm->get('BookFair\Model\School'));
-                    return new TableGateway('school', $dbAdapter, null, $resultSetPrototype);
-                },
+                'BookFair\Model\School' => 'BookFair\Factory\SchoolFactory',            		
+                'BookFair\Model\SchoolTable' =>  'BookFair\Factory\SchoolTableFactory',
+                'BookFair\Factory\SchoolTableGateway' => 'BookFair\Factory\SchoolTableGatewayFactory',
                 'BookFair\Model\BookFair' => 'BookFair\Factory\BookFairFactory',
                 'BookFair\Model\BookFairTable' => function($sm) {
                     $tableGateway = $sm->get('BookFairTableGateway');
