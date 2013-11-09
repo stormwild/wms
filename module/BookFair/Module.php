@@ -30,23 +30,6 @@ class Module
     
     public function getServiceConfig()
     {
-        return array(
-            'factories' => array(
-                'BookFair\Model\School' => 'BookFair\Factory\SchoolFactory',            		
-                'BookFair\Model\SchoolTable' =>  'BookFair\Factory\SchoolTableFactory',
-                'BookFair\Factory\SchoolTableGateway' => 'BookFair\Factory\SchoolTableGatewayFactory',
-                'BookFair\Model\BookFair' => 'BookFair\Factory\BookFairFactory',
-                'BookFair\Model\BookFairTable' => function($sm) {
-                    $tableGateway = $sm->get('BookFairTableGateway');
-                    return new BookFairTable($tableGateway);
-                },
-                'BookFairTableGateway' => function($sm) {
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    $resultSetPrototype = new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype($sm->get('BookFair\Model\BookFair'));
-                    return new TableGateway('bookfair', $dbAdapter, null, $resultSetPrototype);
-                }
-            ),
-        );
+        return include __DIR__ . '/config/service.config.php';
     }
 }

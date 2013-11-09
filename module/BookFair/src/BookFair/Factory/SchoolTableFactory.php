@@ -11,7 +11,7 @@ class SchoolTableFactory implements FactoryInterface
 {
 	public function createService(ServiceLocatorInterface $serviceLocator)
 	{
-		$tableGateway = $serviceLocator->get('BookFair\Factory\SchoolTableGateway');
+		$tableGateway = $serviceLocator->get('SchoolTableGateway');
 		return new SchoolTable($tableGateway);
 	}
 }
